@@ -5,11 +5,14 @@
  */
 package giocosedie;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.logging.Logger;
+import java.util.Scanner;
 
 /**
  *
- * @author MC
+ * @author matteosmurf
  */
 public class TestGiocoSedie {
     private final static int NUMSEDIE = 15;
@@ -20,8 +23,12 @@ public class TestGiocoSedie {
      */
     @SuppressWarnings("deprecation")
 public static void main(String[] args) {
-        Posto sedie[] = new Posto[NUMSEDIE];
 
+        System.out.println("Inserisci il numero di partecipanti: ");
+        Scanner scanner = new Scanner(System.in);
+        int nPartecipanti = scanner.nextInt();
+
+        Posto sedie[] = new Posto[NUMSEDIE];
 	for (int k = 0; k < sedie.length; k++)
 		sedie[k] = new Posto();
 
@@ -29,6 +36,15 @@ public static void main(String[] args) {
 	//System.out.println("Sto facendo partire il Display.");
         logger.info("Sto facendo partire il Display.\n");
 	display.start();
+        
+        try {
+                FileWriter scrittore = new FileWriter("risultato.txt");
+                scrittore.write("");
+                scrittore.close();
+        } catch (IOException e) {
+                System.out.println("file azzerato");
+                e.printStackTrace();
+        }
 
 	Partecipante array[] = new Partecipante[NUMSEDIE+1];
 	for (int i = 0; i < NUMSEDIE + 1; i++) {
