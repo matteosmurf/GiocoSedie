@@ -1,3 +1,4 @@
-Thread: 21, posto: 0
-Thread: 22, posto: 1
+Thread: 23, posto: 0
+Thread: 21, posto: 1
 Thread: 24, posto: 2
+Thread: 22, posto: 3

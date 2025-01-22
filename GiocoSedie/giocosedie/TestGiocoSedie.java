@@ -20,7 +20,6 @@ import java.util.Scanner;
  */
  
 public class TestGiocoSedie {
-    private final static int NUMPARTECIPANTI = 0;
     private static Logger logger = Logger.getLogger("GiocoSedie.TestGiocoSedie");
     
 /**
@@ -48,7 +47,7 @@ public static void main(String[] args) {
                 scrittore.write("");
                 scrittore.close();
         } catch (IOException e) {
-                System.out.println("file azzerato");
+                System.out.println("errore nell'azzeramento del file");
                 e.printStackTrace();
         }
 
