@@ -1,19 +1,26 @@
 package giocosedie;
 
-class Display extends Thread
-
-{
+/**
+ * Classe monitor per lo stato delle sedie.
+ */
+class Display extends Thread {
 	private Posto sedie[];
 	private boolean endgame;
 
+	/**
+	 * Costruttore per inizializzare il display.
+	 * @param sedie[] Array sedie da monitorare.
+	 */
 	public Display(Posto sedie[]) {
-
-
 		this.sedie = new Posto[sedie.length];
 
 		for (int s = 0; s < sedie.length; s++)
 			this.sedie[s] = sedie[s];
 	}
+
+	/**
+	 * Metodo run che avvia il thread display.
+	 */
 
 	public void run() {
 

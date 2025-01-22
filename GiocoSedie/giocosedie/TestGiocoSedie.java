@@ -11,16 +11,22 @@ import java.util.logging.Logger;
 import java.util.Scanner;
 
 /**
- *
  * @author matteosmurf
  */
+
+/** 
+ * Classe principale
+ * Gestisce il numero di partecipanti, le sedie e coordina i thread partecipanti e display. 
+ */
+ 
 public class TestGiocoSedie {
     private final static int NUMPARTECIPANTI = 0;
     private static Logger logger = Logger.getLogger("GiocoSedie.TestGiocoSedie");
     
-    /**
-     * @param args the command line arguments
-     */
+/**
+ * Metodo principale responsabile dell'avvio del gioco delle sedie.
+ * @param args the command line arguments
+ */
     @SuppressWarnings("deprecation")
 public static void main(String[] args) {
 
@@ -34,7 +40,6 @@ public static void main(String[] args) {
 		sedie[k] = new Posto();
 
 	Display display = new Display(sedie);
-	//System.out.println("Sto facendo partire il Display.");
         logger.info("Sto facendo partire il Display.\n");
 	display.start();
         
@@ -50,7 +55,6 @@ public static void main(String[] args) {
 	Partecipante array[] = new Partecipante[NUMPARTECIPANTI];
 	for (int i = 0; i < NUMPARTECIPANTI; i++) {
 		array[i] = new Partecipante(sedie);
-                //System.out.println("Sto facendo partire il thread n." + array[i].getId());
                 logger.info("Sto facendo partire il thread id: " + array[i].getId()+" name: "+array[i].getName()+"\n");
                 array[i].start();
                 }
